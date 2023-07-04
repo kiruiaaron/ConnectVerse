@@ -1,0 +1,48 @@
+My Database
+
+User Table
+.User_ID(Primary Key)
+.Username
+.Email
+.Gender
+.Password(hashes and salted)
+.created_at
+.last_Login_at
+
+Post Table
+.Post_ID
+.User_id(Foreign Key referencing User Table)
+.post_content
+.media_type(image or video)
+.created at 
+
+Comment Table
+.comment_ID
+.user_ID(Foreign Key Referencing User Table)
+.post_id(Foreign Key Referencing Post Table)
+.Comment Content
+.Created_at
+
+like Table
+.like_id(Primary key)
+.user_id(Foreign Key referencing User Table)
+.Post_id(Foreign Key referencing Post Table)
+.created_at
+
+Follow Table
+.follow_id(primary key)
+.follower_id(Foreign Key referencing User Table)
+.following_id(Foreign Key Referencing User Table)
+.created_at
+
+Conversation Table
+.conversation_id(Primary Key)
+.created at
+
+Message Table
+.message_id(Primary Key)
+.conversation_id(Foreign Key referencing conversation Table)
+.sender-id(Foreign Key Referencing User Table)
+.receiver_id(Foreign key referencing User Table)
+.message_content
+created_at
