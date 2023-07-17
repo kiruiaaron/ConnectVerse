@@ -1,0 +1,13 @@
+.rightbar{
+    flex: 3.5;
+    height: calc(100vh - 50px);
+}
+
+.rightbarWrapper{
+    padding: 20px 20px 0 0;
+}
+
+.birthdayImg{
+    width: 40px;
+    height: 40px;
+}
