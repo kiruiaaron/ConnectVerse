@@ -2,12 +2,16 @@ import React from 'react'
 import  './topbar.css'
 import {Chat, Notifications, Person, Search} from "@mui/icons-material"
 import profile from '../../assets/images/boy-in-purple-phone-football-eotueaemuiwuig3z.jpg'
+import {Link} from 'react-router-dom';
 
 const Topbar = () => {
   return (
     <div className='topbarContainer'>
         <div className='topbarLeft'>
+            <Link to="/home" style={{textDecoration:"none"}}>
             <span className='logo'>ConnectVerse</span>
+            </Link>
+            
         </div>
         <div className='topbarCenter'>
             <div className='searchbar '>

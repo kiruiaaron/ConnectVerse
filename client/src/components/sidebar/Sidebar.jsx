@@ -1,7 +1,8 @@
 import React from 'react'
 import './sidebar.css'
 import { Bookmark, Event, Group, HelpOutline, PlayCircleFilledOutlined, RssFeed, School, WorkOutline } from '@mui/icons-material'
-import john from '../../assets/images/hurk-drubman-jr-far-cry-4-hd-phone-akhsppp06864dyau.jpg'
+import { dummyUsers } from '../../assets/dummyData/users'
+import Follower from '../followers/Follower'
 
 const Sidebar = () => {
   return (
@@ -49,22 +50,9 @@ const Sidebar = () => {
            <button className='sidebarButton'>Show More</button>
            <hr className='sidebarhr'/>
            <ul className='sidebarFollowersList' >
-            <li className='sidebarFollower' >
-                 <img className='sidebarFollowerImg' src={john} alt="" />
-                 <span className='sidebarFollowerName'>John Doe</span>
-            </li>
-            <li className='sidebarFollower' >
-                 <img className='sidebarFollowerImg' src={john} alt="" />
-                 <span className='sidebarFollowerName'>John Doe</span>
-            </li>
-            <li className='sidebarFollower' >
-                 <img className='sidebarFollowerImg' src={john} alt="" />
-                 <span className='sidebarFollowerName'>John Doe</span>
-            </li>
-            <li className='sidebarFollower' >
-                 <img className='sidebarFollowerImg' src={john} alt="" />
-                 <span className='sidebarFollowerName'>John Doe</span>
-            </li>
+            {dummyUsers.map((u)=>(
+                  <Follower key={u.id} user={u}/>
+            ))}
            </ul>
         </div>
         </div>

@@ -6,10 +6,11 @@ const config = require('./config/config')
 const RedisStore = require('connect-redis').default
 const {createClient}= require("redis")
 const userRoute = require('./routes/userRoute');
-
+const cors = require('cors')
 const app = express()
 require('dotenv').config()
 app.use(express.json());
+app.use(cors())
 
 
 
@@ -58,6 +59,13 @@ async function startUp(){
         },
         (req,res)=>{
             res.send("ok")
+        })
+
+
+        app.get('/logout',(req,res)=>{
+            req.session.destroy()
+
+            res.send("logout successfully")
         })
         
         app.use('/',userRoute);

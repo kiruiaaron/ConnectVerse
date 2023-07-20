@@ -1,0 +1,34 @@
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: blue;
+    padding: 10px;
+    height: 50px;
+    color:white;
+    position: sticky;
+    top: 0;
+}
+
+.topWrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 100px;
+    justify-content: space-between;
+
+}
+.topHomepage{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    list-style: none;
+}
+.topHomepage li{
+    display: flex;
+    flex-direction: row;
+    padding-left: 8px;
+    align-items: flex-end;
+    justify-content: space-between;
+}

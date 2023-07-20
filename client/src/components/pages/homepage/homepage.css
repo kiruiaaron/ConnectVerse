@@ -1,0 +1,7 @@
+.home{
+    background-image: url("../../../assets/images/technology-pictures-h8j7lgb8eh2mohwx.jpg");
+    background-size: cover;
+    width: 100%;
+    height: calc(97vh - 50px);
+    background-repeat: no-repeat;
+}

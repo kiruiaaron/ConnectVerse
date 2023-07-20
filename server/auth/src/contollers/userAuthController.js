@@ -114,7 +114,7 @@ async function login(req, res) {
         }  else {
           res.status(404).json({
             success: "false",
-            message: "Password does not match"
+            message: "Wrong Password"
           });
         }
         } catch (error) {

@@ -1,0 +1,153 @@
+.login{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.loginWrapper{
+    display: flex;
+    background-color: #6B73F3;
+    border-radius: 20px;
+    width: 70%;
+    height: 80%;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginInside{
+    display: flex;
+    flex-direction: row;
+    background-color: #7874F3;
+    width: 80%;
+    height: 90%;
+}
+.loginWelcome{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+}
+
+.WelcomeLogo{
+    color:#FFFFFF;
+    margin-bottom: 50px;
+
+}
+
+.welcomeText{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.welcomeText h1{
+    margin-bottom: 10px;
+    color: #cccccc;
+}
+
+.welcomeText p{
+    padding-bottom: 5px;
+    font-weight: 600;
+}
+
+.accountCheck{
+   text-align: center;
+
+}
+.accountCheck p{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.accountCheck button{
+    padding: 1em;
+    font-weight: 900;
+    border: none;
+    border-radius: 10px;
+    color: #120be1;
+    cursor: pointer;
+}
+
+.loginForm{
+    color: #7874F3;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 100%;
+    width: 50%;
+}
+
+.loginFormInput{
+    width: 80%;
+    padding: .8em;
+    margin-left: 5px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    color: #7874F3;
+}
+
+.checkPassword{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.loginChekbox{
+    margin-left: 5px;
+}
+.label{
+    margin-right: 50px;
+}
+
+.forgotPassword{
+    color: #FFC598;
+    cursor: pointer;
+}
+.forgotPassword:hover{
+    text-decoration: underline;
+}
+.loginFormSign{
+    border: none;
+    width: 80%;
+    border-radius: 10px;
+    padding:.4em;
+    margin-left: 10px;
+    background-color: #7874F3;
+    color: #FFFFFF;
+    font-weight: 500;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.loginPara{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.socialapp{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+.facebook{
+    padding-right: 2px;
+    cursor: pointer;
+}
+.google{
+    cursor: pointer;
+}
+.error{
+    text-align: center;
+}
+.perror{
+    text-align: center;
+    margin-bottom: 10px;
+}

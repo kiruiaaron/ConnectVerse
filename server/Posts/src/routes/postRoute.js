@@ -9,8 +9,10 @@ const {
   getUserPost,
   replyCommentOnPost,
 } = require("../controllers/PostContoller");
+const { sessionHandler } = require("../middlewares/SessionMiddleware");
 const postRoute = express.Router();
 
+postRoute.use(sessionHandler)
 postRoute.get("/posts", getAllPosts);
 postRoute.post("/posts/insert", createPost);
 postRoute.put("/posts/:post_id", updatePost);

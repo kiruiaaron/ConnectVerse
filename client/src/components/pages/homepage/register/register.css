@@ -1,0 +1,205 @@
+.register{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.registerWrapper{
+    display: flex;
+    background-color: #6B73F3;
+    border-radius: 20px;
+    width: 70%;
+    height: 99%;
+    align-items: center;
+    justify-content: center;
+}
+
+.registerInside{
+    display: flex;
+    flex-direction: row;
+    background-color: #7874F3;
+    width: 80%;
+    height: 98%;
+}
+.registerWelcome{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+}
+
+.regWelcomeLogo{
+    color:#FFFFFF;
+    margin-bottom: 50px;
+
+}
+
+.regwelcomeText{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.regwelcomeText h1{
+    margin-bottom: 10px;
+    color: #cccccc;
+}
+
+.regwelcomeText p{
+    padding-bottom: 5px;
+    font-weight: 600;
+}
+
+.regAccountCheck{
+   text-align: center;
+
+}
+.regAccountCheck p{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.regAccountCheck button{
+    padding: 1em;
+    font-weight: 900;
+    border: none;
+    border-radius: 10px;
+    color: #120be1;
+    cursor: pointer;
+}
+
+.registerForm{
+    color: #7874F3;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 100%;
+    width: 50%;
+}
+
+.registerFormInput{
+    width: 80%;
+    padding: .8em;
+    margin-left: 5px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    color: #7874F3;
+}
+.countryFlagInput{
+    display: flex;
+    flex-direction: row;
+}
+.registerFormInputCountry{
+    padding:.8em;
+    margin-left: 0;
+    width: 75%;
+    border-radius: 10px;
+    color: #7874F3;
+    border: 2px solid black;
+}
+.registerFormInputGender{
+    width: 85%;
+    padding: .8em;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    color: #7874F3;
+    border: 2px solid black;
+}
+.phoneNumber{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.phoneRaw{
+    margin-left: 5px;
+    padding-top: 18px;
+    margin-top: 1px;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+   border-bottom: 2px solid black;
+   border-top-left-radius: 10px;
+   border-bottom-left-radius: 10px;
+}
+.registerFormInputPhone{
+    padding:.8em;
+    margin-left: 0;
+    width: 70%;
+    color: #7874F3;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-left: none;
+    border-bottom: 2px solid black;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.registerFormInputPhone:focus{
+    border: none;
+}
+.checkPassword{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.registerChekbox{
+    margin-left: 5px;
+}
+
+.forgotPassword{
+    color: #FFC598;
+    cursor: pointer;
+}
+.registerFormSign{
+    border: none;
+    width: 80%;
+    border-radius: 10px;
+    padding:.4em;
+    margin-left: 10px;
+    background-color: #7874F3;
+    color: #FFFFFF;
+    font-weight: 900;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.registerPara{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.regsocialapp{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+.facebook{
+    padding-right: 2px;
+    cursor: pointer;
+}
+.google{
+    cursor: pointer;
+}
+.flag{
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.visibilityIcon{
+    padding-top: 0px;
+}
