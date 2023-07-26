@@ -8,6 +8,8 @@ const {
   LikePost,
   getUserPost,
   replyCommentOnPost,
+  getComments,
+  getCommentsReplies,
 } = require("../controllers/PostContoller");
 const { sessionHandler } = require("../middlewares/SessionMiddleware");
 const postRoute = express.Router();
@@ -20,6 +22,8 @@ postRoute.delete("/posts/delete/:post_id", deletePost);
 postRoute.get("/posts/:UserName", getUserPost);
 postRoute.post("/posts/comment", CommentOnPost);
 postRoute.post('/posts/comment/reply',replyCommentOnPost)
-postRoute.post("/posts/likePost", LikePost);
+postRoute.post("/posts/likePost/:Post_id", LikePost);
+postRoute.get('/posts/comments/:Post_id',getComments)
+postRoute.get('/posts/comments/replies/:Comment_id',getCommentsReplies)
 
 module.exports = postRoute;
