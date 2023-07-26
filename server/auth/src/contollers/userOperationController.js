@@ -36,26 +36,33 @@ async function updateUser(req, res) {
     const { User_id } = req.params;
 
     const {
-      FirstName,
+      First_Name,
       Surname,
-      Email_Address,
-      country,
+      Country,
       Phone_Number,
-      Date_of_birth,
-      Bio,
+      Password,
+      BIO,
+      Profile_Image,
+      CoverPhoto,
+      RelationShip,
+      City,
+
     } = req.body;
 
     try {
       const results = sql
         .request()
         .input("User_id", User_id)
-        .input("FirstName", FirstName)
+        .input("First_Name", First_Name)
         .input("Surname", Surname)
-        .input("email", Email_Address)
-        .input("country", country)
+        .input("Country", Country)
         .input("Phone_Number", Phone_Number)
-        .input("Date_Of_birth", Date_of_birth)
-        .input("Bio", Bio)
+        .input("Password", Password)
+        .input("BIO", BIO)
+        .input("Profile_Image",Profile_Image)
+        .input("CoverPhoto",CoverPhoto)
+        .input("RelationShip",RelationShip)
+        .input("City",City)
         .execute("UpdateUser");
 
       res.status(201).json({
@@ -141,6 +148,42 @@ async function getUser(req, res) {
     });
   }
 }
+
+
+//get user follows
+
+async function getUserFollowers(req, res) {
+  const sql = await mssql.connect(config);
+
+  if (sql.connected) {
+    try {
+      const { User_id } = req.params;
+
+      const result = await sql
+        .request()
+        .input("User_id", User_id)
+        .execute("getUserFollowers");
+
+      res.status(200).json({
+        success: true,
+        message: "retrieved user followers successfully",
+        results: result.recordset,
+      });
+    } catch (error) {
+      console.log(error);
+      res.status(404).json({
+        success: false,
+        message: "failed to retrieve a user follow",
+      });
+    }
+  } else {
+    res.status(500).json({
+      success: false,
+      message: "Internal server Error",
+    });
+  }
+}
+
 
 //follow user
 
@@ -250,4 +293,5 @@ module.exports = {
   deleteUserAccount,
   followUser,
   unFollowUser,
+  getUserFollowers
 };
