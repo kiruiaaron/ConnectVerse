@@ -6,8 +6,15 @@ async function sessionHandler(req, res, next) {
     const redisClient = createClient();
     redisClient.connect();
     console.log("Connected to Redis");
+
+   // const redisStore = new RedisStore({
+    //  client:redisClient,
+//prefix:''
+    //});
+
     let cookie = req.headers["cookie"];
     let sessionID = cookie.substring(16, 52);
+    console.log(sessionID)
     let session = await redisClient.get(sessionID);
     let real_session = JSON.parse(session);
     const authorized = real_session?.authorized;
