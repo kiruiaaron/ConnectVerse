@@ -86,3 +86,15 @@
     object-fit: cover;
     cursor: pointer;
 }
+
+.logoutButton{
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.logoutButton button{
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

@@ -1,12 +1,25 @@
 .share{
     width: 100%;
-    height: 170px;
+    height: auto;
     border-radius: 10px;
     box-shadow: 0px 0px 16px -8px rgba(0,0,0.68);
 }
 
 .shareWrapper{
     padding: 10px;
+}
+
+.previewSource{
+    width: 100%;
+    position: relative;
+}
+
+.shareCancelling{
+    position: absolute;
+    top: 0;
+    right: 20px;
+    cursor: pointer;
+    opacity: 0.7;
 }
 
 .shareTop{

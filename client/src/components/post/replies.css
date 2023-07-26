@@ -1,0 +1,60 @@
+.CommentRepliesWrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 7px;
+}
+
+.replyInput{
+    background-color: #F0F2F5;
+    width: 50px;
+    border: 1px solid black;
+    margin-left: 5px;
+    padding: .5em;
+    border-radius: 10px;
+    word-wrap: break-word;
+}
+.eplytInput{
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+}
+
+.ReplyInputTextInside{
+   background-color: #F0F2F5;
+   padding: .6em;
+   border: none;
+   outline: none;
+   border-radius: 5px;
+   width: 90%;
+   word-wrap: break-word;
+}
+.sendInputreply{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+}
+
+.sendInputreply button{
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    outline:none;
+}
+
+.sendREPLY{
+    color:rgb(7, 157, 212);;
+    margin-bottom: 0;
+}
+
+.ReplyIcon{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    padding: 0;
+    top: -5px;
+}

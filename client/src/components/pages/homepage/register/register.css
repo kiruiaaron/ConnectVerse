@@ -118,30 +118,31 @@
     margin-top: 5px;
     margin-bottom: 10px;
 }
-.phoneRaw{
+.phoneNumberDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    border:2px solid black;
+    width: 85%;
     margin-left: 5px;
-    padding-top: 18px;
-    margin-top: 1px;
-    border-top: 2px solid black;
-    border-left: 2px solid black;
-   border-bottom: 2px solid black;
-   border-top-left-radius: 10px;
-   border-bottom-left-radius: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.phoneRaw{
+   
 }
 .registerFormInputPhone{
     padding:.8em;
     margin-left: 0;
     width: 70%;
     color: #7874F3;
-    border-top: 2px solid black;
-    border-right: 2px solid black;
-    border-left: none;
-    border-bottom: 2px solid black;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border: none;
+    width: 80%;
 }
 .registerFormInputPhone:focus{
     border: none;
+    outline: none;
 }
 .checkPassword{
     display: flex;
@@ -199,7 +200,31 @@
     margin-left: 5px;
     margin-right: 5px;
 }
+.passwordInput{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  border: 2px solid black;
+  width: 85%;
+  margin-left: 5px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
 
+.registerFormInputPassword{
+    width: 90%;
+    padding: .8em;
+    border: none;
+    margin-left: 5px;
+}
+.registerFormInputPassword:focus{
+    outline: none;
+    border: none;
+}
 .visibilityIcon{
     padding-top: 0px;
+    text-align: center;
+    cursor: pointer;
+
 }

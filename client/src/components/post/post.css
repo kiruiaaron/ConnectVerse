@@ -1,5 +1,6 @@
 .post{
     width: 100%;
+    height: auto;
     border-radius: 10px;
     box-shadow: 0px 0px 16px -8px rgba(0,0,0.68);
     margin: 30px 0;
@@ -71,4 +72,109 @@
     cursor: pointer;
     border-bottom: 1px dashed gray;
     font-size: 15px;
+}
+
+.postBottomCenter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.thumb{
+    display: flex;
+    align-items: center;
+    padding-right: 50px;
+    cursor: pointer;
+}
+.thumbUp{
+    color: rgb(7, 157, 212);
+    padding-right: 5px;
+}
+
+.comment{
+    display: flex;
+    align-items: center;
+    padding-right: 50px;
+    cursor: pointer;
+}
+.insertComment{
+    color: rgb(7, 157, 212);
+    padding-right: 5px;
+}
+
+.Share{
+    display: flex;
+    align-items: center;
+    padding-right: 50px;
+    cursor: pointer;
+}
+.Shareicon{
+    color: rgb(7, 157, 212);
+    padding-right: 5px;
+}
+
+.postBottomCenterhr{
+    margin-top: 5px;
+}
+
+.CommentInput{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.CommentprofileImg{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.CommentInputText{
+    width: 90%;
+    height: auto;
+    margin-left: 10px;
+}
+.CommentInputTextInside{
+    width: 90%;
+    padding: .5em;
+    height: auto;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: #F0F2F5;
+    word-wrap: break-word;
+}
+
+.sendInputComment{
+   margin-left: -20px;
+   cursor: pointer;
+}
+.sendInputComment button{
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: white;
+    cursor: pointer;
+}
+.send{
+    color: rgb(7, 157, 212);
+    margin-bottom: 0;
+}
+.allcomments{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.otherCommentsInput{
+    background-color: #F0F2F5;
+    padding: .5em;
+    border-radius: 10px;
+    margin-left: 10px;
+    width: auto;
+    height: auto;
+    word-wrap:normal;
 }
