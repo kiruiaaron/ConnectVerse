@@ -1,47 +1,43 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./login.css";
 import { Facebook, Google } from "@mui/icons-material";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import {Visibility, VisibilityOff} from '@mui/icons-material'
+//import { loginCall } from "../../../../apiCalls";
+import { AuthContext } from "../../../../context/AuthContext";
+//import { CircularProgress } from "@mui/material";
 
 export const Login = () => {
-  const [UserName, setUserName] = useState();
-  const [Password, setPassword] = useState();
-  const [uError,setuError] = useState();
-  const [pError,setPerror] = useState();
+  const [isVisible,setIsVisible] = useState(false)
+  const[pError,setPerror] = useState()
+const [Password,setPassword] = useState()
+const[UserName,setUserName]= useState();
+
+  const [err, setErr] = useState(null);
+
+  const navigate = useNavigate()
 
 
-    
-const navigate = useNavigate()
-const handleSubmit= async(e) => {
-  e.preventDefault();
+  const { login } = useContext(AuthContext);
 
-  const values ={
-    UserName,
-    Password
-  }
-  try {
-    await axios.post('http://localhost:7070/login',values)
-    .then(res=>{
-     navigate('/Home')
-     //console.log(res.response.data.message)
-    })
-  } catch (error) {
-    if(error.response.data.message === 'Invalid UserName' && error.response.data.message !== 'Wrong Password'){
-      setuError(error.response.data.message)
-      setPerror('')
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const inputs={
+      UserName,
+      Password
     }
-    else if(error.response.data.message !== 'Invalid UserName' && error.response.data.message === 'Wrong Password'){
-      setPerror(error.response.data.message)
-      setuError('')
+    try {
+      await login(inputs);
+      navigate("/Home")
+    } catch (err) {
+      console.log(err)
+      setPerror('Wrong Credentials')
+      setErr(err.response.data);
     }
-    else{
-     
-    }console.log(error.response.data.message)
-   
-  }
+  };
 
-};
+
 
   return (
     <div className="login">
@@ -72,20 +68,24 @@ const handleSubmit= async(e) => {
                 type="text"
                 placeholder="UserName"
                 className="loginFormInput"
-                required
                 value={UserName}
-                onChange={e=>setUserName(e.target.value)}
-              />
-              <p className="error" style={{color:'red'}}>{uError? uError:''}</p>
-
-              <input
-                type="Password"
-                placeholder="Password"
-                className="loginFormInput"
                 required
-                value={Password}
-                onChange={e=>setPassword(e.target.value)}
+                onChange={(e)=>setUserName(e.target.value)}
               />
+              
+              <div className="LoginpasswordInput">
+                  <input
+                    type={isVisible? "text" :'password'}
+                    placeholder="Password"
+                    className="registerFormInputPassword"
+                    value={Password}
+                    onChange={(e)=>setPassword(e.target.value)}
+                    required
+                  />
+                  <div onClick={()=>setIsVisible(!isVisible)}>
+                  {isVisible? <Visibility className="visibilityIcon"/>: <VisibilityOff/>}
+                  </div>
+                  </div>
               <p className="perror" style={{color:'red'}}>{pError}</p>
 
               <div className="checkPassword">
@@ -97,7 +97,9 @@ const handleSubmit= async(e) => {
 
                 <p className="forgotPassword">Forgot Password</p>
               </div>
-              <button className="loginFormSign">Sign In</button>
+              <button className="loginFormSign" type="submit"  >
+           Sign In
+             </button>
               <p className="loginPara">Or use the following to sign in </p>
               <div className="socialapp">
                 <div className="facebook">
@@ -114,3 +116,5 @@ const handleSubmit= async(e) => {
     </div>
   );
 };
+
+
