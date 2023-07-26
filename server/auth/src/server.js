@@ -9,8 +9,19 @@ const userRoute = require('./routes/userRoute');
 const cors = require('cors')
 const app = express()
 require('dotenv').config()
+
+
+
+//adding socket.io configuration
+
+
+
 app.use(express.json());
-app.use(cors())
+app.use(cors(
+    {
+        origin:"http://localhost:3001",credentials:true
+    }
+))
 
 
 
@@ -28,7 +39,7 @@ async function startUp(){
 
         const redisStore = new RedisStore({
             client:redisClient,
-            prefix:""
+            prefix:''
         })
         const oneDay =60 * 60 * 1000 * 24
 
@@ -42,12 +53,15 @@ async function startUp(){
             unset:'destroy',
             cookie:{
                 httpOnly:false,
-                maxAge:oneDay
-            }
-        }))
+                maxAge:oneDay,
+                secure:false,
+                domain:'localhost'
+            },
+        })
+        );
 
 
-        app.use((req,res,next)=>{req.pool =pool,next();})
+        app.use((req,res,next)=>{req.pool =pool;next();})
 
         app.get('/',(req,res,next)=>{
             let cont = true;
@@ -72,7 +86,6 @@ async function startUp(){
         
         
         const PORT = process.env.PORT;
-        
         
         
         app.listen(PORT,()=>{
