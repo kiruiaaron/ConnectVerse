@@ -2,7 +2,7 @@
 function sessionHandler(req, res, next) {
     const authorized = req.session?.authorized;
   
-    if (req.session && authorized) {
+    if (req.session.UserID && authorized) {
       // Session is valid and authorized
       console.log(req.session);
       //console.log(req.cookies); // Log the cookie value
