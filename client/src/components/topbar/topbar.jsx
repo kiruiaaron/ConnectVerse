@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import  './topbar.css'
 import {Chat, Notifications, Person, Search} from "@mui/icons-material"
-import profile from '../../assets/images/boy-in-purple-phone-football-eotueaemuiwuig3z.jpg'
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
+import profile from '../../assets/images/avatar.png'
 
 const Topbar = () => {
+
+
+const {currentUser} =useContext(AuthContext)
+
+const navigate = useNavigate()
+
+const handleLogout=()=>{
+   localStorage.removeItem('user')
+   navigate('/')
+}
+
+
   return (
     <div className='topbarContainer'>
         <div className='topbarLeft'>
@@ -43,8 +56,15 @@ const Topbar = () => {
                         <Notifications/>
                         <span className='topbarIconBadge'>1</span>
                     </div>
+                    <div className='logoutButton'>
+                        <button onClick={handleLogout}>Logout</button>
+                    </div>
                 </div>
-                <img src={profile} alt="" className='topbarImage'/>
+            
+                <Link to={`/profile/${currentUser?.UserName}`}>
+                <img src={currentUser?.Profile_Image || profile} alt="" className='topbarImage'/>
+                </Link>
+               
         </div>
     </div>
   )
