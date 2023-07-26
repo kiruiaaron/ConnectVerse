@@ -73,7 +73,8 @@ export const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState();
   const [userNameError,setUserNameError]= useState();
   const [passError,setPassError] = useState()
-  const [isVisible, setIsVisible] = useState(true)
+  const [emailError,setEmailError]= useState();
+  const [isVisible, setIsVisible] = useState(false)
 
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
@@ -99,8 +100,11 @@ export const Register = () => {
         });
       } catch (error) {
         console.log(error.response.data.message);
-        if(error.response.data.message === 'Username already exists'){
+        if(error.response.data.message === 'Username already exists'&& error.response.data.message !== 'Email already exists'){
                 setUserNameError(error.response.data.message)
+        }
+        else if(error.response.data.message !== 'Username already exists'&& error.response.data.message === 'Email already exists'){
+          setEmailError(error.response.data.message)
         }
       }
      }else{
@@ -193,6 +197,7 @@ export const Register = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                   />
+                  <p className="error" style={{color:'red'}}>{emailError}</p>
 
                   <div className="countryFlagInput">
                     <img
@@ -221,11 +226,14 @@ export const Register = () => {
                   </div>
                   <div>
                     {searchSelectedCountry && (
-                      <div className="phoneNumber">
+                      <div className="phoneNumberDiv">
+                        <div className="phoneNumber">
                         <p className="phoneRaw">
                           {searchSelectedCountry?.idd.root}
                           {searchSelectedCountry?.idd.suffixes}
                         </p>
+                        </div>
+                        <div>
                         <input
                           type="text"
                           placeholder="Phone_Number"
@@ -234,6 +242,8 @@ export const Register = () => {
                           onChange={(e) => setPhoneNumber(e.target.value)}
                           required
                         />
+                        </div>
+                      
                       </div>
                     )}
                   </div>
@@ -247,27 +257,34 @@ export const Register = () => {
                     required
                   />
 
-                  <div>
+                  <div className="passwordInput">
                   <input
                     type={isVisible? "text" :'password'}
                     placeholder="Password"
-                    className="registerFormInput"
+                    className="registerFormInputPassword"
                     value={Password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
                   />
+                  <div onClick={()=>setIsVisible(!isVisible)}>
                   {isVisible? <Visibility className="visibilityIcon"/>: <VisibilityOff/>}
+                  </div>
                   </div>
                 
 
+                  <div className="passwordInput">
                   <input
-                    type="Password"
-                    placeholder="Confirm Password"
-                    className="registerFormInput"
+                    type={isVisible? "text" :'password'}
+                    placeholder="Password"
+                    className="registerFormInputPassword"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     required
                   />
+                  <div onClick={()=>setIsVisible(!isVisible)}>
+                  {isVisible? <Visibility className="visibilityIcon"/>: <VisibilityOff/>}
+                  </div>
+                  </div>
                   <p className="error" style={{color:'red'}}>{passError}</p>
 
                   <button className="registerFormSign" type="submit">
