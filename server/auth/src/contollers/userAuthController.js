@@ -95,20 +95,25 @@ async function login(req, res) {
         .execute("GetUserByUserName");
 
       let user = result.recordset[0];
-      console.log(user);
+     // console.log(user);
       if (user) {
         try {
         let password_match =await bcrypt.compare(Password,user.Password);
         
+        if (password_match) {
+
         req.session.UserID= user.User_id;
         req.session.authorized = true;
 
-        if (password_match) {
+
+         console.log(user)
           res
             .status(200)
             .json({ 
               success: "true", 
-              message: "Login Successful" 
+              message: "Login Successful", 
+              UserID:req.session.UserID,
+              result:user
             });
 
         }  else {
